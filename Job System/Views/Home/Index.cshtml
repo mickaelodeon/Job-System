@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container py-5">
+    <div class="row text-center mb-5">
+        <div class="col">
+            <h1>Find Your Dream Job</h1>
+            <p class="lead">Connect with top companies and opportunities</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-briefcase fs-1 text-primary mb-3"></i>
+                    <h5 class="card-title">Browse Jobs</h5>
+                    <p class="card-text">
+                        Explore thousands of job opportunities across various industries
+                    </p>
+                    <a asp-controller="Home" asp-action="Jobs" class="btn btn-outline-primary">Search Jobs</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-building fs-1 text-success mb-3"></i>
+                    <h5 class="card-title">For Employers</h5>
+                    <p class="card-text">
+                        Post jobs and find the perfect candidates for your company
+                    </p>
+                    <a href="#" class="btn btn-outline-success">Post a Job</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-person-badge fs-1 text-info mb-3"></i>
+                    <h5 class="card-title">For Candidates</h5>
+                    <p class="card-text">
+                        Create your profile and let employers find you
+                    </p>
+                    <a href="#" class="btn btn-outline-info">Create Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
