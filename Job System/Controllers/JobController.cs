@@ -1,43 +1,41 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using JobPortal.Models;
+using System.Linq;
 
-namespace JobPortal.Controllers
+public class JobController : Controller
 {
-    public class JobController : Controller
+    private readonly JobDbContext _context;
+
+    public JobController(JobDbContext context)
     {
-        public IActionResult Post()
+        _context = context;
+    }
+
+    public IActionResult Index(string keywords, string location, string category, string company)
+    {
+        var jobs = from j in _context.Jobs
+                   select j;
+
+        if (!string.IsNullOrEmpty(keywords))
         {
-            return View();
+            jobs = jobs.Where(j => j.Title.Contains(keywords) || j.Description.Contains(keywords));
         }
 
-        public IActionResult Manage()
+        if (!string.IsNullOrEmpty(location))
         {
-            return View();
+            jobs = jobs.Where(j => j.Location == location);
         }
 
-        public IActionResult Details(int id)
+        if (!string.IsNullOrEmpty(category))
         {
-            //later on, we would fetch the job details from the database na haa sampol lang ni
-            var job = new Job
-            {
-                Id = id,
-                Title = "Senior Software Engineer",
-                Company = "Tech Corp",
-                Location = "New York, NY",
-                Type = "Full-time",
-                Salary = "$120k - $150k",
-                Description = "We are looking for an experienced software engineer to join our team...",
-                PostedDate = DateTime.Now.AddDays(-2)
-            };
-
-            return View(job);
+            jobs = jobs.Where(j => j.Category == category);
         }
 
-        public IActionResult Apply(int id)
+        if (!string.IsNullOrEmpty(company))
         {
-            //later on, we would fetch the job details from the database na haa sampol lang ni
-            ViewBag.JobId = id;
-            return View();
+            jobs = jobs.Where(j => j.Company == company);
         }
+
+        return View(jobs.ToList());
     }
 }
