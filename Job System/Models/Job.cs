@@ -26,5 +26,9 @@ namespace JobPortal.Models
         public string Description { get; set; }
 
         public DateTime PostedDate { get; set; }
+
+        public int Applications { get; set; }
+        public int Views { get; set; }
+        public string Status { get; set; } = "Active";
     }
 }

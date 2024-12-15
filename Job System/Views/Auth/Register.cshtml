@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Choose Registration Type";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h2 class="text-center mb-4">Choose Registration Type</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <a asp-controller="Auth" asp-action="CandidateRegister" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm hover-card">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-person-workspace fs-1 text-primary mb-3"></i>
+                                <h5 class="card-title">Job Seeker</h5>
+                                <p class="text-muted">
+                                    Create your profile, apply for jobs, and track your applications
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a asp-controller="Auth" asp-action="CompanyRegister" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm hover-card">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-building fs-1 text-success mb-3"></i>
+                                <h5 class="card-title">Employer</h5>
+                                <p class="text-muted">
+                                    Post jobs, manage applications, and find the perfect candidates
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-muted">
+                    Already have an account?
+                    <a asp-controller="Auth" asp-action="Login" class="text-decoration-none">Sign in</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

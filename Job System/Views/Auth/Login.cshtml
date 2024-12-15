@@ -26,17 +26,21 @@
                             </div>
                         </div>
 
-                        <div class="d-grid">
+                        <div class="d-grid mb-3">
                             <button type="submit" class="btn btn-primary btn-lg">
-                                Sign In
+                                Login
                             </button>
                         </div>
 
-                        <div class="text-center mt-3">
-                            <a href="#" class="text-decoration-none">Forgot password?</a>
-                            <p class="mt-2">
-                                Don't have an account? <a href="#" class="text-decoration-none">Register here</a>
+                        <div class="text-center">
+                            <a asp-controller="Auth" asp-action="ForgotPassword" class="text-decoration-none">Forgot password?</a>
+                            <p class="mt-3">
+                                Don't have an account? Register as:
                             </p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a asp-controller="Auth" asp-action="CandidateRegister" class="btn btn-outline-success">Candidate</a>
+                                <a asp-controller="Auth" asp-action="CompanyRegister" class="btn btn-outline-primary">Company</a>
+                            </div>
                         </div>
                     </form>
                 </div>
