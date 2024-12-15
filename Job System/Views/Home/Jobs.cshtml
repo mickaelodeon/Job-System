@@ -1,4 +1,4 @@
-﻿@model IEnumerable<JobPortal.Models.Job>
+@model IEnumerable<JobPortal.Models.Job>
 @{
     ViewData["Title"] = "Jobs";
 }
@@ -9,17 +9,17 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title mb-3">Search Jobs</h5>
-                    <form class="row g-3">
+                    <form class="row g-3" method="get" asp-controller="Job" asp-action="Index">
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label class="form-label">Keywords</label>
-                                <input type="search" class="form-control" placeholder="Job title or keywords">
+                                <input type="search" class="form-control" name="keywords" placeholder="Job title or keywords">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label class="form-label">Location</label>
-                                <select class="form-select">
+                                <select class="form-select" name="location">
                                     <option value="">All Locations</option>
                                     <option>New York, NY</option>
                                     <option>San Francisco, CA</option>
@@ -31,7 +31,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label class="form-label">Category</label>
-                                <select class="form-select">
+                                <select class="form-select" name="category">
                                     <option value="">All Categories</option>
                                     <option>Software Development</option>
                                     <option>Design</option>
@@ -44,7 +44,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label class="form-label">Company</label>
-                                <select class="form-select">
+                                <select class="form-select" name="company">
                                     <option value="">All Companies</option>
                                     <option>Tech Corp</option>
                                     <option>Design Studio</option>
